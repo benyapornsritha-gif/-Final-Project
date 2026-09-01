@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - อ่านนิยาย</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .read-section {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .novel-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .novel-title {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .novel-cover-container {
+            width: 200px;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .novel-cover-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .novel-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            font-family: 'Sarabun', sans-serif;
+        }
+        .novel-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .back-btn-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .back-btn {
+            background: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #ccc;
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .read-section { padding: 30px 20px; margin: 20px 10px; }
+            .novel-title { font-size: 24px; }
+            .novel-content { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="books.html">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html">มุมพูดคุย</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="read-section">
+            <div class="novel-header">
+                <div class="novel-cover-container" id="coverContainer" style="display: none;">
+                    <img id="novelCover" src="" alt="Novel Cover">
+                </div>
+                <h1 class="novel-title" id="novelTitle">กำลังโหลด...</h1>
+            </div>
+            
+            <div class="novel-content" id="novelContent">
+                <!-- Content will be injected here -->
+            </div>
+            
+            <div class="back-btn-container">
+                <button class="back-btn" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i> กลับไปหน้าก่อนหน้า
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="books.html">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อ</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@novelnest.com</p>
+                <p><i class="fab fa-line"></i> Line Official: @novelnest</p>
+                <p><i class="fab fa-facebook"></i> Facebook: Novelnest Official</p>
+                <p><i class="fab fa-instagram"></i> Instagram: @novelnest.th</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Load Novel Content
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const novelId = urlParams.get('id');
+            const titleParam = urlParams.get('title');
+            
+            const titleEl = document.getElementById('novelTitle');
+            const contentEl = document.getElementById('novelContent');
+            const coverContainer = document.getElementById('coverContainer');
+            const coverImg = document.getElementById('novelCover');
+            
+            if (novelId) {
+                // Try to load from localStorage
+                const publishedNovels = JSON.parse(localStorage.getItem('publishedNovels') || '[]');
+                const novel = publishedNovels.find(n => n.id == novelId);
+                
+                if (novel) {
+                    titleEl.innerText = novel.title;
+                    contentEl.innerHTML = novel.content || '<p>ไม่มีเนื้อหา</p>';
+                    if (novel.cover) {
+                        coverImg.src = novel.cover;
+                        coverContainer.style.display = 'block';
+                    }
+                    return;
+                }
+            }
+            
+            // Default/Dummy Novel Content for static books
+            let displayTitle = titleParam ? decodeURIComponent(titleParam) : 'เนื้อหานิยายตอนที่ 1';
+            titleEl.innerText = displayTitle;
+            
+            // Hash function to convert title to a predictable number
+            function hashString(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    let char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash; // Convert to 32bit integer
+                }
+                return Math.abs(hash);
+            }
+
+            // A collection of different story paragraphs
+            const storyParagraphs = [
+                "แสงแดดยามเช้าสาดส่องผ่านผ้าม่านโปร่งสีขาว เข้ามากระทบใบหน้าหวานของผู้ที่กำลังหลับใหล เสียงนกร้องเจื้อยแจ้วจากต้นไม้ริมหน้าต่าง ปลุกให้เธอต้องลืมตาตื่นขึ้นมาพบกับเช้าวันใหม่...",
+                "ท่ามกลางความมืดมิดของปราสาทโบราณ เสียงฝีเท้าหนักๆ ดังก้องไปตามโถงทางเดิน แสงคบเพลิงสลัวๆ เผยให้เห็นเงาของชายหนุ่มร่างสูงที่กำลังเดินตรงไปยังห้องลับ...",
+                "งานเลี้ยงเต้นรำในค่ำคืนนี้เต็มไปด้วยผู้คนในแวดวงชั้นสูง เสียงเพลงวอลทซ์บรรเลงคลอไปกับเสียงพูดคุยหัวเราะ แต่สำหรับเธอแล้ว มันกลับน่าเบื่อหน่ายสิ้นดี...",
+                "ฝนตกหนักอย่างไม่ลืมหูลืมตา ร่มคันเล็กๆ ของเธอไม่สามารถกันความเปียกปอนได้เลย เธอยืนหลบฝนอยู่ที่ป้ายรถเมล์เก่าๆ มองดูผู้คนที่รีบเร่งเดินผ่านไป...",
+                "กลิ่นหอมของกาแฟคั่วบดลอยอบอวลไปทั่วร้านคาเฟ่เล็กๆ ตรงมุมถนน เขานั่งอยู่ที่โต๊ะประจำริมหน้าต่าง สายตาจับจ้องไปยังสมุดบันทึกเล่มเก่าในมือ...",
+                "เสียงดาบกระทบกันดังกึกก้องไปทั่วลานประลอง เหงื่อเม็ดโตผุดซึมตามกรอบหน้าของนักรบหนุ่ม เขาหอบหายใจหนักหน่วงแต่สายตายังคงมุ่งมั่นไม่ยอมแพ้...",
+                "ละอองหิมะสีขาวโปรยปรายลงมาปกคลุมถนนจนขาวโพลน สองมือเล็กๆ ซุกอยู่ในกระเป๋าเสื้อโค้ทตัวหนา ขณะที่เธอกำลังก้าวเดินฝ่าความหนาวเหน็บ...",
+                "กลิ่นควันปืนและเสียงระเบิดยังคงดังก้องอยู่ในหัว การหลบหนีครั้งนี้เดิมพันด้วยชีวิต เขาต้องพาเธอออกไปจากที่นี่ให้ได้ ไม่ว่าจะต้องแลกด้วยอะไรก็ตาม...",
+                "แสงจันทร์สาดส่องลงมากระทบผิวน้ำในทะเลสาบจนเกิดประกายระยิบระยับ ชายหนุ่มทอดสายตามองออกไปอย่างเหม่อลอย ความทรงจำเก่าๆ หวนกลับมาทำร้ายเขาอีกครั้ง...",
+                "เสียงประกาศจากลำโพงสถานีรถไฟดึงให้เธอหลุดจากภวังค์ ตั๋วเที่ยวเดียวในมือถูกกำแน่น นี่จะเป็นการเริ่มต้นชีวิตใหม่ที่เธอใฝ่ฝันมาตลอด...",
+                "ดวงตากลมโตจ้องมองเอกสารบนโต๊ะอย่างไม่เชื่อสายตา พินัยกรรมฉบับนี้ระบุเงื่อนไขประหลาดที่เธอต้องทำให้สำเร็จภายในหนึ่งปี มิฉะนั้นทุกอย่างจะสูญเปล่า...",
+                "ลมทะเลพัดเอาความเค็มมาปะทะจมูก เกาะส่วนตัวแห่งนี้เงียบสงบเกินไปจนน่าขนลุก ใครบางคนกำลังเฝ้ามองเธออยู่จากมุมมืดของคฤหาสน์หลังใหญ่...",
+                "เสียงนาฬิกาปลุกแผดร้องลั่นห้อง เธอสะดุ้งตื่นด้วยความตกใจ ฝันร้ายเมื่อคืนยังคงตามหลอกหลอน ราวกับว่ามันเป็นลางบอกเหตุอะไรบางอย่าง...",
+                "ท่ามกลางทะเลทรายอันกว้างใหญ่ คาราวานพ่อค้ากำลังเดินทางฝ่าพายุทราย แผนที่โบราณในมือของหัวหน้าขบวนคือความหวังเดียวที่จะนำพาพวกเขารอดชีวิต...",
+                "เขากดรหัสผ่านหน้าประตูอย่างรวดเร็ว ห้องแล็บลับแห่งนี้ซ่อนความลับที่สามารถสั่นสะเทือนโลกทั้งใบได้ และตอนนี้มันกำลังจะถูกเปิดเผย..."
+            ];
+
+            const titleHash = hashString(displayTitle);
+            
+            // Pick 3 unique paragraphs based on the hash
+            const p1 = storyParagraphs[titleHash % storyParagraphs.length];
+            const p2 = storyParagraphs[(titleHash + 3) % storyParagraphs.length];
+            const p3 = storyParagraphs[(titleHash + 7) % storyParagraphs.length];
+
+            const dummyContent = `
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${p1}</p>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${p2}</p>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${p3}</p>
+            `;
+
+            contentEl.innerHTML = dummyContent + `<br><br><p style="color:#999; font-size:14px; text-align:center;"><em>(เนื้อหานิยายเรื่องนี้ถูกสร้างขึ้นมาเฉพาะสำหรับเรื่อง "${displayTitle}" เพื่อการทดสอบระบบ)</em></p>`;
+        });
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+</html>

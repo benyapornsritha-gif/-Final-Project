@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - นิยายออนไลน์</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">หน้าแรก</a></li>
+                <li><a href="books.html">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html">มุมพูดคุย</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-banner" style="background-image: url('assets/banner.png');">
+                <div class="hero-content">
+                    <div class="hero-header">
+                        <div class="hero-title">
+                            <img src="https://cdn-icons-png.flaticon.com/512/814/814513.png" alt="Crown"
+                                class="crown-icon">
+                            <h2>เรื่องที่ <span class="highlight-large">คนอ่านกันเยอะ</span></h2>
+                            <p class="subtitle">นิยายคุณภาพ ที่ครองใจนักอ่าน</p>
+                        </div>
+                        <div class="hero-logo">
+                            <img src="assets/logo.png" alt="Novelnest Center" class="center-logo">
+                        </div>
+                        <div class="hero-title">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Star"
+                                class="star-icon">
+                            <h2>เรื่อง <span class="highlight-large">ใหม่</span></h2>
+                            <p class="subtitle">นิยายมาใหม่ สดใหม่ทุกอารมณ์</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-container">
+                        <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div class="book-cards">
+                            <!-- Popular Books -->
+                            <div class="book-card-small" onclick="window.location.href='read.html?title=เพียงเธอ...ในความลับ'" style="cursor: pointer;">
+                                <div class="rank-badge">1</div>
+                                <img src="assets/book1.png" alt="เพียงเธอ...ในความลับ">
+                                <div class="book-info-small">
+                                    <h4>"เพียงเธอ...ในความลับ"</h4>
+                                    <span><i class="fas fa-fire"></i> 2.5M</span>
+                                </div>
+                            </div>
+                            <div class="book-card-small" onclick="window.location.href='read.html?title=กุญแจแห่งกาลเวลา'" style="cursor: pointer;">
+                                <div class="rank-badge">2</div>
+                                <img src="assets/book2.png" alt="กุญแจแห่งกาลเวลา">
+                                <div class="book-info-small">
+                                    <h4>กุญแจแห่งกาลเวลา</h4>
+                                    <span><i class="fas fa-fire"></i> 1.8M</span>
+                                </div>
+                            </div>
+                            <div class="book-card-small" onclick="window.location.href='read.html?title=พันธนาการรัตติกาล'" style="cursor: pointer;">
+                                <div class="rank-badge">3</div>
+                                <img src="assets/book3.png" alt="พันธนาการรัตติกาล">
+                                <div class="book-info-small">
+                                    <h4>พันธนาการรัตติกาล</h4>
+                                    <span><i class="fas fa-fire"></i> 1.2M</span>
+                                </div>
+                            </div>
+                            <div class="book-card-small" onclick="window.location.href='read.html?title=ดวงใจใต้ต้นไม้'" style="cursor: pointer;">
+                                <div class="rank-badge">4</div>
+                                <img src="assets/book1.png" alt="ดวงใจใต้ต้นไม้">
+                                <div class="book-info-small">
+                                    <h4>ดวงใจใต้ต้นไม้</h4>
+                                    <span><i class="fas fa-fire"></i> 965K</span>
+                                </div>
+                            </div>
+
+                            <!-- New Books -->
+                            <div class="book-card-small" onclick="window.location.href='read.html?title=แสงในความทรงจำ'" style="cursor: pointer;">
+                                <div class="new-badge">NEW</div>
+                                <img src="assets/book2.png" alt="แสงในความทรงจำ">
+                                <div class="book-info-small">
+                                    <h4>แสงในความทรงจำ</h4>
+                                    <span class="tags">#โรแมนซ์ #ดราม่า</span>
+                                </div>
+                            </div>
+                            <div class="book-card-small" onclick="window.location.href='read.html?title=จันทร์กระซิบรัก'" style="cursor: pointer;">
+                                <div class="new-badge">NEW</div>
+                                <img src="assets/book3.png" alt="จันทร์กระซิบรัก">
+                                <div class="book-info-small">
+                                    <h4>จันทร์กระซิบรัก</h4>
+                                    <span class="tags">#แฟนตาซี #โรแมนซ์</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#" class="btn-primary" style="text-decoration: none; display: inline-block;">ดูเรื่องยอดนิยมทั้งหมด <i class="fas fa-chevron-right"></i></a>
+                        <a href="#" class="btn-primary" style="text-decoration: none; display: inline-block;">ดูเรื่องใหม่ทั้งหมด <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recently Read Section -->
+        <section class="section">
+            <div class="section-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Book Icon" class="section-icon">
+                <h2>อ่านล่าสุด</h2>
+            </div>
+
+            <div class="recent-books-grid">
+                <!-- Book Card 1 -->
+                <div class="recent-book-card">
+                    <div class="card-inner" onclick="window.location.href='read.html?title=เพียงเธอในความลับ'" style="cursor: pointer;">
+                        <img src="assets/book1.png" alt="เพียงเธอในความลับ" class="book-cover">
+                        <div class="book-details">
+                            <div class="brand">Novelnest</div>
+                            <h3>เพียงเธอ<br>ในความลับ</h3>
+                            <p class="author">โรแมนซ์ - ดราม่า - แฟนตาซี</p>
+                            <p class="description">เมื่อความรักทางเดียวต้องสิ้นสุดลง
+                                ความสัมพันธ์ที่ไม่มีผู้ใดล่วงรู้จะทำอย่างไรเมื่อถึงจุดแตกหัก</p>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="cursor: pointer;" onclick="window.location.href='read.html?title=เพียงเธอในความลับ'">
+                        <div class="read-progress">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <span class="label">ตอนที่อ่านค้างไว้</span>
+                                <span class="chapter">ตอนที่ 10</span>
+                            </div>
+                        </div>
+                        <button class="continue-btn" onclick="window.location.href='read.html?title=เพียงเธอในความลับ'"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book Card 2 -->
+                <div class="recent-book-card">
+                    <div class="card-inner" onclick="window.location.href='read.html?title=รักเหนือบัลลังก์เวทมนตร์'" style="cursor: pointer;">
+                        <img src="assets/book3.png" alt="รักเหนือบัลลังก์เวทมนตร์" class="book-cover">
+                        <div class="book-details">
+                            <div class="brand">Novelnest</div>
+                            <h3>รักเหนือ<br>บัลลังก์เวทมนตร์</h3>
+                            <p class="author">โรแมนซ์ - แฟนตาซี - การเมือง</p>
+                            <p class="description">เมื่อเจ้าหญิงต้องแต่งงานกับศัตรู
+                                ความรักที่เกิดขึ้นท่ามกลางสงครามจะเปลี่ยนทุกอย่าง</p>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="cursor: pointer;" onclick="window.location.href='read.html?title=รักเหนือบัลลังก์เวทมนตร์'">
+                        <div class="read-progress">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <span class="label">ตอนที่อ่านค้างไว้</span>
+                                <span class="chapter">ตอนที่ 25</span>
+                            </div>
+                        </div>
+                        <button class="continue-btn" onclick="window.location.href='read.html?title=รักเหนือบัลลังก์เวทมนตร์'"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book Card 3 -->
+                <div class="recent-book-card">
+                    <div class="card-inner" onclick="window.location.href='read.html?title=รักเหนือปัญญาของดารา'" style="cursor: pointer;">
+                        <img src="assets/book2.png" alt="รักเหนือปัญญาของดารา" class="book-cover">
+                        <div class="book-details">
+                            <div class="brand">Novelnest</div>
+                            <h3>รักเหนือปัญญา<br>ของดารา</h3>
+                            <p class="author">โรแมนซ์ - ผจญภัย - แฟนตาซี</p>
+                            <p class="description">เธอคือดาราที่ตกลงมาจากฟ้า ความรักของเขาจะปกป้องเธอได้ตลอดไปหรือไม่
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="cursor: pointer;" onclick="window.location.href='read.html?title=รักเหนือปัญญาของดารา'">
+                        <div class="read-progress">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <span class="label">ตอนที่อ่านค้างไว้</span>
+                                <span class="chapter">ตอนที่ 18</span>
+                            </div>
+                        </div>
+                        <button class="continue-btn" onclick="window.location.href='read.html?title=รักเหนือปัญญาของดารา'"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Romance Section -->
+        <section class="section">
+            <h2 class="category-title">นิยายรัก</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="window.location.href='read.html?title=The CEO\\'s Heartsong'" style="cursor: pointer;">
+                    <img src="assets/book1.png" alt="The CEO's Heartsong">
+                </div>
+                <div class="category-card" onclick="window.location.href='read.html?title=The Shadowed Chronicles'" style="cursor: pointer;">
+                    <img src="assets/book2.png" alt="The Shadowed Chronicles">
+                </div>
+                <div class="category-card" onclick="window.location.href='read.html?title=The Starlight Princess'" style="cursor: pointer;">
+                    <img src="assets/book3.png" alt="The Starlight Princess">
+                </div>
+            </div>
+        </section>
+
+        <!-- Romanza Section -->
+        <section class="section">
+            <h2 class="category-title">นิยายโรมานซ์</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="window.location.href='read.html?title=The Midnight Heart'" style="cursor: pointer;">
+                    <img src="assets/book4.png" alt="The Midnight Heart">
+                </div>
+                <div class="category-card" onclick="window.location.href='read.html?title=Romanza Book 2'" style="cursor: pointer;">
+                    <img src="assets/book5.png" alt="Romanza Book 2">
+                </div>
+                <div class="category-card" onclick="window.location.href='read.html?title=Romanza Book 3'" style="cursor: pointer;">
+                    <img src="assets/book10.png" alt="Romanza Book 3">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="#">หน้าแรก</a>
+                <a href="#">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อ</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@novelnest.com</p>
+                <p><i class="fab fa-line"></i> Line Official: @novelnest</p>
+                <p><i class="fab fa-facebook"></i> Facebook: Novelnest Official</p>
+                <p><i class="fab fa-instagram"></i> Instagram: @novelnest.th</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Simple Carousel Logic
+        const bookCards = document.querySelector('.book-cards');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const dots = document.querySelectorAll('.dot');
+
+        nextBtn.addEventListener('click', () => {
+            bookCards.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            bookCards.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        // Update dots on scroll
+        bookCards.addEventListener('scroll', () => {
+            if (dots.length === 0) return;
+            const scrollPercentage = bookCards.scrollLeft / (bookCards.scrollWidth - bookCards.clientWidth);
+            let activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+            activeIndex = Math.max(0, Math.min(activeIndex, dots.length - 1));
+            
+            dots.forEach((dot, index) => {
+                if (index === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+
+        // Click dots to scroll
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                if (dots.length <= 1) return;
+                const targetScroll = (index / (dots.length - 1)) * (bookCards.scrollWidth - bookCards.clientWidth);
+                bookCards.scrollTo({ left: targetScroll, behavior: 'smooth' });
+            });
+        });
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+
+</html>

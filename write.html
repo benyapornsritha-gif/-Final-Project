@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - แต่งนิยาย</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .write-section { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+        }
+        .write-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .write-header h2 {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 10px; color: var(--text-dark); }
+        .form-control { 
+            width: 100%; 
+            padding: 12px 15px; 
+            border: 1px solid #ddd; 
+            border-radius: 10px; 
+            font-family: 'Sarabun', sans-serif; 
+            font-size: 16px; 
+            outline: none; 
+            transition: 0.3s; 
+            background-color: #fafafa;
+        }
+        .form-control:focus { 
+            border-color: var(--primary-color); 
+            box-shadow: 0 0 0 3px rgba(82, 108, 174, 0.1); 
+            background-color: white;
+        }
+        .editor-toolbar { 
+            background: #f5f5f5; 
+            padding: 10px 15px; 
+            border: 1px solid #ddd; 
+            border-bottom: none; 
+            border-radius: 10px 10px 0 0; 
+            display: flex; 
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .editor-btn { 
+            background: white; 
+            border: 1px solid #ddd; 
+            padding: 6px 12px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            color: var(--text-dark); 
+            transition: 0.2s;
+        }
+        .editor-btn:hover { background: #e0e0e0; }
+        .editor-textarea { 
+            border-radius: 0 0 10px 10px; 
+            min-height: 400px; 
+            resize: vertical; 
+            background-color: white;
+        }
+        .cover-upload { 
+            border: 2px dashed #ccc; 
+            padding: 50px 20px; 
+            text-align: center; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            color: var(--text-muted); 
+            background-color: #fafafa;
+        }
+        .cover-upload i { font-size: 40px; margin-bottom: 15px; color: var(--primary-color); opacity: 0.7; }
+        .cover-upload:hover { border-color: var(--primary-color); background: #f0f4ff; }
+        
+        .publish-btn { 
+            background: #F05A28; 
+            color: white; 
+            border: none; 
+            padding: 15px 50px; 
+            font-size: 18px; 
+            border-radius: 30px; 
+            font-weight: 600; 
+            font-family: 'Sarabun', sans-serif; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 10px;
+            margin: 40px auto 0; 
+            box-shadow: 0 5px 15px rgba(240, 90, 40, 0.3); 
+            transition: all 0.3s ease; 
+        }
+        .publish-btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 20px rgba(240, 90, 40, 0.4); 
+            background: #e04a18;
+        }
+
+        @media (max-width: 768px) {
+            .write-section { padding: 20px; margin: 20px 10px; }
+            .publish-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="books.html">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html" class="active">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html">มุมพูดคุย</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="write-section">
+            <div class="write-header">
+                <i class="fas fa-book-medical" style="font-size: 28px; color: var(--primary-color);"></i>
+                <h2>เพิ่มงานเขียนใหม่ (แต่งนิยาย)</h2>
+            </div>
+            
+            <form id="writeNovelForm" onsubmit="event.preventDefault(); alert('บันทึกและเผยแพร่นิยายสำเร็จ!'); window.location.href='authors.html';">
+                
+                <div class="form-group">
+                    <label>อัปโหลดหน้าปกนิยาย</label>
+                    <div class="cover-upload" onclick="document.getElementById('cover-file').click();">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p style="font-weight: 500; font-size: 16px;">คลิกเพื่ออัปโหลด หรือลากไฟล์มาวางที่นี่</p>
+                        <p style="font-size: 13px; margin-top: 5px;">ขนาดแนะนำ: 800 x 1200 พิกเซล (ไม่เกิน 5MB)</p>
+                    </div>
+                    <input type="file" id="cover-file" style="display: none;" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label>ชื่อเรื่อง (Title)</label>
+                    <input type="text" class="form-control" placeholder="ตั้งชื่อเรื่องที่น่าสนใจ..." required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>หมวดหมู่</label>
+                        <select class="form-control" required>
+                            <option value="">เลือกหมวดหมู่</option>
+                            <option value="romance">นิยายรัก / โรแมนซ์</option>
+                            <option value="drama">ดราม่า</option>
+                            <option value="fantasy">แฟนตาซี</option>
+                            <option value="scifi">ไซไฟ / วิทยาศาสตร์</option>
+                            <option value="horror">สยองขวัญ</option>
+                            <option value="y">นิยาย Y / Yuri</option>
+                            <option value="historical">ย้อนยุค / จีนโบราณ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>สถานะ</label>
+                        <select class="form-control">
+                            <option value="ongoing">กำลังแต่ง (ยังไม่จบ)</option>
+                            <option value="completed">จบแล้ว</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>เรื่องย่อ / คำโปรย (Synopsis)</label>
+                    <textarea class="form-control" rows="4" placeholder="แนะนำเรื่องย่อให้นักอ่านสนใจ..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>เนื้อหานิยายตอนแรก</label>
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-btn" title="ตัวหนา" onclick="formatText('bold')"><i class="fas fa-bold"></i></button>
+                        <button type="button" class="editor-btn" title="ตัวเอียง" onclick="formatText('italic')"><i class="fas fa-italic"></i></button>
+                        <button type="button" class="editor-btn" title="ขีดเส้นใต้" onclick="formatText('underline')"><i class="fas fa-underline"></i></button>
+                        <span style="border-left: 1px solid #ddd; margin: 0 5px;"></span>
+                        <button type="button" class="editor-btn" title="จัดซ้าย" onclick="formatText('justifyLeft')"><i class="fas fa-align-left"></i></button>
+                        <button type="button" class="editor-btn" title="จัดกลาง" onclick="formatText('justifyCenter')"><i class="fas fa-align-center"></i></button>
+                        <button type="button" class="editor-btn" title="จัดขวา" onclick="formatText('justifyRight')"><i class="fas fa-align-right"></i></button>
+                        <span style="border-left: 1px solid #ddd; margin: 0 5px;"></span>
+                        <button type="button" class="editor-btn" title="แทรกรูปภาพ" onclick="insertImage()"><i class="fas fa-image"></i></button>
+                    </div>
+                    <div id="editor" class="form-control editor-textarea" contenteditable="true" style="overflow-y: auto;"></div>
+                    <input type="hidden" id="editorContent" name="content" required>
+                </div>
+
+                <div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+                    <button type="button" class="publish-btn" style="background: #e0e0e0; color: #333; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0;" onclick="window.history.back();" onmouseover="this.style.background='#ccc'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='#e0e0e0'; this.style.transform='translateY(0)';">
+                        <i class="fas fa-times"></i> ยกเลิก
+                    </button>
+                    <button type="submit" class="publish-btn" style="margin: 0;">
+                        <i class="fas fa-paper-plane"></i> บันทึกและเผยแพร่
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="books.html">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อ</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@novelnest.com</p>
+                <p><i class="fab fa-line"></i> Line Official: @novelnest</p>
+                <p><i class="fab fa-facebook"></i> Facebook: Novelnest Official</p>
+                <p><i class="fab fa-instagram"></i> Instagram: @novelnest.th</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Cover Image Upload Preview
+        const coverInput = document.getElementById('cover-file');
+        const coverUploadBox = document.querySelector('.cover-upload');
+        const originalCoverHtml = coverUploadBox.innerHTML;
+
+        coverInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    coverUploadBox.innerHTML = `<img src="${e.target.result}" style="max-width: 100%; max-height: 300px; border-radius: 10px; object-fit: contain;">`;
+                    coverUploadBox.style.padding = '10px';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                coverUploadBox.innerHTML = originalCoverHtml;
+                coverUploadBox.style.padding = '50px 20px';
+            }
+        });
+
+        // Rich Text Editor Logic
+        function formatText(command) {
+            document.execCommand(command, false, null);
+            document.getElementById('editor').focus();
+        }
+
+        function insertImage() {
+            // Create a hidden file input on the fly
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Insert the image data URL into the editor
+                        document.execCommand('insertImage', false, e.target.result);
+                        
+                        // Add some basic styling to the inserted images
+                        const editor = document.getElementById('editor');
+                        const images = editor.getElementsByTagName('img');
+                        for(let img of images) {
+                            if (!img.style.maxWidth) {
+                                img.style.maxWidth = '100%';
+                                img.style.height = 'auto';
+                                img.style.borderRadius = '8px';
+                                img.style.margin = '10px 0';
+                            }
+                        }
+                    }
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+            document.getElementById('editor').focus();
+        }
+
+        // Handle Form Submission
+        document.getElementById('writeNovelForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get HTML content from the editor
+            const editorContent = document.getElementById('editor').innerHTML;
+            
+            // Basic validation
+            if (editorContent.trim() === '' || editorContent === '<br>') {
+                alert('กรุณาเขียนเนื้อหานิยายก่อนเผยแพร่');
+                return;
+            }
+            
+            // Extract title and cover image
+            const titleInput = document.querySelector('input[placeholder="ตั้งชื่อเรื่องที่น่าสนใจ..."]');
+            const title = titleInput ? titleInput.value : 'นิยายเรื่องใหม่';
+            const coverImg = document.querySelector('.cover-upload img');
+            const coverSrc = coverImg ? coverImg.src : 'assets/book1.png'; // default fallback
+            
+            // Save to localStorage
+            let publishedNovels = JSON.parse(localStorage.getItem('publishedNovels') || '[]');
+            publishedNovels.push({
+                title: title,
+                cover: coverSrc,
+                content: editorContent,
+                id: Date.now()
+            });
+            localStorage.setItem('publishedNovels', JSON.stringify(publishedNovels));
+            
+            // Set it to hidden input just in case we need to send it via form later
+            document.getElementById('editorContent').value = editorContent;
+            
+            alert('บันทึกและเผยแพร่นิยายสำเร็จ!');
+            window.location.href = 'authors.html';
+        });
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+</html>

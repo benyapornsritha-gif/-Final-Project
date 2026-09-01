@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - ชั้นหนังสือ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="books.html" class="active">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html">มุมพูดคุย</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+
+        <section class="filter-section">
+            <div class="filter-container">
+                <span class="filter-label">หมวดหมู่ :</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn btn-all">ทั้งหมด</button>
+                    <button class="filter-btn btn-romance">นิยายรัก</button>
+                    <button class="filter-btn btn-romanza">นิยายโรมานซ์</button>
+                    <button class="filter-btn btn-ancient">นิยายจีนโบราณ</button>
+                    <button class="filter-btn btn-gl">Girl love</button>
+                    <button class="filter-btn btn-bl">Boy love</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Books Grid -->
+        <section class="section">
+            <h2 class="category-title">หนังสือทั้งหมด</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="window.location.href='read.html?title=หนังสือ 1'" style="cursor: pointer;"><img src="assets/book5.png" alt="หนังสือ 1"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=หนังสือ 2'" style="cursor: pointer;"><img src="assets/book8.jpg" alt="หนังสือ 2"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=หนังสือ 3'" style="cursor: pointer;"><img src="assets/book11.png" alt="หนังสือ 3"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=หนังสือ 4'" style="cursor: pointer;"><img src="assets/book6.jpg" alt="หนังสือ 4"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=หนังสือ 5'" style="cursor: pointer;"><img src="assets/book10.png" alt="หนังสือ 5"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=หนังสือ 6'" style="cursor: pointer;"><img src="assets/book9.jpg" alt="หนังสือ 6"></div>
+            </div>
+        </section>
+
+        <!-- Romance Section -->
+        <section class="section">
+            <h2 class="category-title">นิยายรัก</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="window.location.href='read.html?title=นิยายรัก 1'" style="cursor: pointer;"><img src="assets/book1.png" alt="นิยายรัก 1"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=นิยายรัก 2'" style="cursor: pointer;"><img src="assets/book6.jpg" alt="นิยายรัก 2"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=นิยายรัก 3'" style="cursor: pointer;"><img src="assets/book10.png" alt="นิยายรัก 3"></div>
+            </div>
+        </section>
+
+        <!-- Romanza Section -->
+        <section class="section">
+            <h2 class="category-title">นิยายโรมานซ์</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="window.location.href='read.html?title=โรมานซ์ 1'" style="cursor: pointer;"><img src="assets/book3.png" alt="โรมานซ์ 1"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=โรมานซ์ 2'" style="cursor: pointer;"><img src="assets/book8.jpg" alt="โรมานซ์ 2"></div>
+                <div class="category-card" onclick="window.location.href='read.html?title=โรมานซ์ 3'" style="cursor: pointer;"><img src="assets/book2.png" alt="โรมานซ์ 3"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="books.html">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อ</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@novelnest.com</p>
+                <p><i class="fab fa-line"></i> Line Official: @novelnest</p>
+                <p><i class="fab fa-facebook"></i> Facebook: Novelnest Official</p>
+                <p><i class="fab fa-instagram"></i> Instagram: @novelnest.th</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+</html>
+

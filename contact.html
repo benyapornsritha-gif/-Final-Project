@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - ติดต่อ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="books.html">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html">มุมพูดคุย</a></li>
+                <li><a href="contact.html" class="active">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="contact-section">
+
+            <!-- Section Title -->
+            <div class="contact-section-header">
+                <div class="contact-title-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h2 class="contact-section-title">ติดต่อนักเขียน</h2>
+            </div>
+
+            <!-- Author Info Card -->
+            <div class="author-contact-card">
+                <img src="assets/author_avatar.png" alt="Secret Moon" class="author-contact-avatar">
+                <div class="author-contact-info">
+                    <h3 class="author-contact-name">ชื่อผู้แต่ง: รินรดา และนามปากกา Secret Moon</h3>
+                    <p class="author-contact-channel">ช่องทางโซเชียล:</p>
+                    <div class="author-social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook social-icon facebook-icon"></i>
+                            <span>Facebook</span>
+                            <span class="social-handle">facebook.com/rinrada.author</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fa-brands fa-x-twitter social-icon x-icon"></i>
+                            <span>X</span>
+                            <span class="social-handle">x.com/secret_moon_x</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok social-icon tiktok-icon"></i>
+                            <span>TikTok</span>
+                            <span class="social-handle">tiktok.com/@secret_moon</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Section -->
+            <div class="message-section">
+                <h3 class="message-section-title">ส่งข้อความถึงนักเขียน</h3>
+
+                <!-- Example Message Card -->
+                <div class="message-card">
+                    <img src="assets/ผู้อ่าน.jpg" alt="นักอ่านรังฝัน" class="commenter-avatar">
+                    <div class="message-content">
+                        <p class="commenter-name">ชื่อ : นักอ่านรังฝัน</p>
+                        <p class="message-text">
+                            <span class="heart-icon">❤️</span> <strong>ข้อความถึงผู้แต่ง</strong><br>
+                            ขอบคุณที่วันทางไปกับเรื่องราวของเรา<br>
+                            ทุกยอดอ่าน ทุกคอมเมนด์ และทุกคำที่ส่งใจจากนักอ่าน<br>
+                            คือพลังสำคัญที่ช่วยให้นักเขียนสร้างผลงานดี ๆ ต่อไป<br>
+                            หากคุณชื่นชอบนิยายเรื่องนี้ อย่าลืมกดติดตาม แสดงความคิดเห็น<br>
+                            หรือส่งกำลังใจถึงผู้แต่งได้เลยนะคะ<br>
+                            เพราะทุกข้อความของคุณ มีความหมายเสมอ ❤️
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Message Form -->
+                <div class="message-form-area">
+                    <textarea class="message-input" rows="4" placeholder="พิมพ์ข้อความถึงนักเขียน..."></textarea>
+                    <div class="message-form-actions">
+                        <button class="send-btn" onclick="sendMessage()">ส่งข้อความ</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="books.html">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อ</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@novelnest.com</p>
+                <p><i class="fab fa-line"></i> Line Official: @novelnest</p>
+                <p><i class="fab fa-facebook"></i> Facebook: Novelnest Official</p>
+                <p><i class="fab fa-instagram"></i> Instagram: @novelnest.th</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Load Messages from localStorage
+        function renderReply(container, text, time) {
+            const replyCard = document.createElement('div');
+            replyCard.style.marginTop = '15px';
+            replyCard.style.padding = '15px';
+            replyCard.style.background = '#f0f2f5';
+            replyCard.style.borderRadius = '8px';
+            replyCard.style.borderLeft = '4px solid #5c6bc0';
+            replyCard.style.display = 'flex';
+            replyCard.style.gap = '15px';
+            
+            replyCard.innerHTML = `
+                <img src="assets/author_avatar.png" alt="นักเขียน" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <div style="flex: 1;">
+                    <p style="font-weight: 600; color: #333; margin-bottom: 5px; font-size: 0.95rem;">Secret Moon (นักเขียน)</p>
+                    <p style="color: #444; font-size: 0.95rem; margin-bottom: 5px;">${text.replace(/\n/g, '<br>')}</p>
+                    <p style="font-size: 0.75rem; color: #888;">ตอบเมื่อ: ${time}</p>
+                </div>
+            `;
+            container.appendChild(replyCard);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const messages = JSON.parse(localStorage.getItem('readerMessages') || '[]');
+            const messageSection = document.querySelector('.message-section');
+            const formArea = document.querySelector('.message-form-area');
+            
+            if (messages.length > 0 && messageSection) {
+                messages.forEach(msg => {
+                    const newCard = document.createElement('div');
+                    newCard.className = 'message-card';
+                    newCard.style.marginTop = '20px';
+                    
+                    newCard.innerHTML = `
+                        <img src="assets/ผู้อ่าน.jpg" alt="ผู้อ่าน" class="commenter-avatar">
+                        <div class="message-content" style="width: 100%;">
+                            <p class="commenter-name">ชื่อ : นักอ่านรังฝัน</p>
+                            <p class="message-text">
+                                ${msg.text.replace(/\n/g, '<br>')}
+                            </p>
+                            <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">ส่งเมื่อ: ${msg.time}</p>
+                        </div>
+                    `;
+                    
+                    messageSection.insertBefore(newCard, formArea);
+                    
+                    // Render existing replies
+                    if (msg.replies && msg.replies.length > 0) {
+                        const contentDiv = newCard.querySelector('.message-content');
+                        msg.replies.forEach(reply => {
+                            renderReply(contentDiv, reply.text, reply.time);
+                        });
+                    }
+                });
+            }
+        });
+
+        // Send Message Logic
+        function sendMessage() {
+            const input = document.querySelector('.message-input');
+            const text = input.value.trim();
+            if (text !== '') {
+                const messageSection = document.querySelector('.message-section');
+                const formArea = document.querySelector('.message-form-area');
+                
+                const newCard = document.createElement('div');
+                newCard.className = 'message-card';
+                newCard.style.marginTop = '20px'; // Spacing from previous message
+                
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
+                const msgId = Date.now(); // Generate unique ID
+                
+                newCard.innerHTML = `
+                    <img src="assets/ผู้อ่าน.jpg" alt="ผู้อ่าน" class="commenter-avatar">
+                    <div class="message-content">
+                        <p class="commenter-name">ชื่อ : นักอ่านรังฝัน</p>
+                        <p class="message-text">
+                            ${text.replace(/\n/g, '<br>')}
+                        </p>
+                        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">ส่งเมื่อ: ${timeString}</p>
+                    </div>
+                `;
+                
+                messageSection.insertBefore(newCard, formArea);
+                
+                // Save to localStorage so authors page can see it
+                let messages = JSON.parse(localStorage.getItem('readerMessages') || '[]');
+                messages.push({ id: msgId, text: text, time: timeString, replies: [] });
+                localStorage.setItem('readerMessages', JSON.stringify(messages));
+                
+                input.value = '';
+            } else {
+                alert('กรุณาพิมพ์ข้อความก่อนส่งค่ะ');
+            }
+        }
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+</html>
+

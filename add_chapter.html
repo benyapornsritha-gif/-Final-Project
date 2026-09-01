@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - เพิ่มตอนใหม่</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .write-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .novel-info-display {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .novel-info-display h3 {
+            color: var(--secondary-color);
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(240, 90, 40, 0.1);
+        }
+
+        /* Editor Styles */
+        .editor-container {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .editor-toolbar {
+            background: #f8f9fa;
+            padding: 10px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .editor-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #555;
+        }
+
+        .editor-btn:hover {
+            background: #e9ecef;
+            color: var(--primary-color);
+        }
+
+        .editor-content-area {
+            min-height: 400px;
+            padding: 20px;
+            outline: none;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .editor-content-area[placeholder]:empty:before {
+            content: attr(placeholder);
+            color: #aaa;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .btn-cancel {
+            background: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-cancel:hover {
+            background: #ccc;
+        }
+
+        .btn-publish {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(29, 53, 87, 0.3);
+        }
+
+        .btn-publish:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(29, 53, 87, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="books.html">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html" class="active">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html">มุมพูดคุย</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="write-section">
+            <h1 class="section-title"><i class="fas fa-plus-circle"></i> เพิ่มตอนใหม่</h1>
+            
+            <div class="novel-info-display">
+                <p style="margin-bottom: 5px; color: #666;">กำลังเพิ่มตอนให้กับนิยายเรื่อง:</p>
+                <h3 id="displayNovelTitle">กำลังโหลด...</h3>
+            </div>
+
+            <form id="addChapterForm">
+                <div class="form-group">
+                    <label>ชื่อตอน (Chapter Title)</label>
+                    <input type="text" class="form-control" id="chapterTitle" placeholder="เช่น บทที่ 1: การเริ่มต้น..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>เนื้อหานิยาย</label>
+                    <div class="editor-container">
+                        <div class="editor-toolbar">
+                            <button type="button" class="editor-btn" onclick="document.execCommand('bold', false, null)" title="ตัวหนา"><i class="fas fa-bold"></i></button>
+                            <button type="button" class="editor-btn" onclick="document.execCommand('italic', false, null)" title="ตัวเอียง"><i class="fas fa-italic"></i></button>
+                            <button type="button" class="editor-btn" onclick="document.execCommand('underline', false, null)" title="ขีดเส้นใต้"><i class="fas fa-underline"></i></button>
+                            <div style="width: 1px; background: #ddd; margin: 0 5px;"></div>
+                            <button type="button" class="editor-btn" onclick="document.execCommand('justifyLeft', false, null)" title="จัดชิดซ้าย"><i class="fas fa-align-left"></i></button>
+                            <button type="button" class="editor-btn" onclick="document.execCommand('justifyCenter', false, null)" title="จัดกึ่งกลาง"><i class="fas fa-align-center"></i></button>
+                            <button type="button" class="editor-btn" onclick="document.execCommand('justifyRight', false, null)" title="จัดชิดขวา"><i class="fas fa-align-right"></i></button>
+                        </div>
+                        <div class="editor-content-area" id="editorContent" contenteditable="true" placeholder="เริ่มเขียนเนื้อหาที่นี่..."></div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="window.history.back()">ยกเลิก</button>
+                    <button type="button" class="btn-publish" onclick="saveChapter()">บันทึกและเผยแพร่ตอนใหม่</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="books.html">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentNovelId = null;
+        let isStaticNovel = false;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const novelId = urlParams.get('id');
+            const titleParam = urlParams.get('title');
+            
+            const displayTitle = document.getElementById('displayNovelTitle');
+            
+            if (novelId) {
+                currentNovelId = novelId;
+                const publishedNovels = JSON.parse(localStorage.getItem('publishedNovels') || '[]');
+                const novel = publishedNovels.find(n => n.id == novelId);
+                if (novel) {
+                    displayTitle.innerText = novel.title;
+                } else {
+                    displayTitle.innerText = "ไม่พบนิยาย";
+                }
+            } else if (titleParam) {
+                isStaticNovel = true;
+                displayTitle.innerText = decodeURIComponent(titleParam);
+            } else {
+                displayTitle.innerText = "ไม่ระบุเรื่อง";
+            }
+        });
+
+        function saveChapter() {
+            const chapTitle = document.getElementById('chapterTitle').value.trim();
+            const content = document.getElementById('editorContent').innerHTML.trim();
+            
+            if (!chapTitle) {
+                alert('กรุณาระบุชื่อตอน');
+                return;
+            }
+            if (!content || content === '<br>') {
+                alert('กรุณาเขียนเนื้อหาก่อนเผยแพร่');
+                return;
+            }
+
+            if (currentNovelId) {
+                let publishedNovels = JSON.parse(localStorage.getItem('publishedNovels') || '[]');
+                const novelIndex = publishedNovels.findIndex(n => n.id == currentNovelId);
+                
+                if (novelIndex !== -1) {
+                    if (!publishedNovels[novelIndex].chapters) {
+                        publishedNovels[novelIndex].chapters = [];
+                    }
+                    publishedNovels[novelIndex].chapters.push({
+                        title: chapTitle,
+                        content: content,
+                        date: new Date().toISOString()
+                    });
+                    
+                    // Update latest content to be the new chapter for reading easily
+                    publishedNovels[novelIndex].content = content;
+                    
+                    localStorage.setItem('publishedNovels', JSON.stringify(publishedNovels));
+                    alert('เพิ่มตอนใหม่เรียบร้อยแล้ว!');
+                    window.location.href = 'authors.html';
+                }
+            } else if (isStaticNovel) {
+                // Mockup for static books
+                alert('เพิ่มตอนใหม่เรียบร้อยแล้ว! (นี่คือหนังสือจำลอง ตอนใหม่จะถูกบันทึกชั่วคราว)');
+                window.location.href = 'authors.html';
+            }
+        }
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - แนะนำนักเขียน</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="books.html">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html" class="active">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html">มุมพูดคุย</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Author Profile Section -->
+        <section class="author-profile-section">
+            <div class="author-avatar-container">
+                <img src="assets/author_avatar.png" alt="Secret Moon Avatar" class="author-avatar">
+            </div>
+            
+            <div class="author-info">
+                <p class="author-real-name">ชื่อผู้แต่ง : รินรดา</p>
+                <p class="author-pen-name">นามปากกา : Secret Moon</p>
+            </div>
+            
+            <div class="author-stats">
+                <div class="stat-group-left">
+                    <p class="stat-item">งานเขียน 4 เรื่อง</p>
+                    <p class="stat-item">อ่าน 3.5k ครั้ง</p>
+                    <p class="stat-item"><i class="fas fa-user"></i> ติดตาม 206 คน</p>
+                </div>
+                <div class="stat-group-right">
+                    <p class="stat-item">เพิ่มเข้าชั้น 6.0k ครั้ง</p>
+                </div>
+            </div>
+            
+            <div class="author-actions" id="writeNovelContainer" style="margin-top: 30px; display: flex; justify-content: center; gap: 15px;">
+                <button onclick="window.location.href='write.html'" style="background-color: #F05A28; color: white; border: none; padding: 12px 40px; border-radius: 30px; font-size: 18px; font-family: 'Sarabun', sans-serif; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; box-shadow: 0 5px 15px rgba(240, 90, 40, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(240, 90, 40, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(240, 90, 40, 0.3)';">
+                    <i class="fas fa-pen-fancy"></i> แต่งนิยาย
+                </button>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section class="section author-works-section">
+            <div class="section-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/889/889647.png" alt="Pen Document Icon" class="section-icon">
+                <h2>งานเขียน</h2>
+            </div>
+            
+            <div class="works-grid">
+                <div class="category-card">
+                    <img src="assets/book1.png" alt="The CEO's Heartsong" onclick="window.location.href='read.html?title=The CEO\\'s Heartsong'" style="cursor: pointer;">
+                    <div class="chapter-info">
+                        <span class="chapter-count">10 ตอน</span>
+                        <a href="add_chapter.html?title=The CEO's Heartsong" class="add-chapter-btn"><i class="fas fa-plus"></i> เพิ่มตอน</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="assets/book2.png" alt="The Shadowed Chronicles" onclick="window.location.href='read.html?title=The Shadowed Chronicles'" style="cursor: pointer;">
+                    <div class="chapter-info">
+                        <span class="chapter-count">25 ตอน</span>
+                        <a href="add_chapter.html?title=The Shadowed Chronicles" class="add-chapter-btn"><i class="fas fa-plus"></i> เพิ่มตอน</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="assets/book4.png" alt="The Midnight Heart" onclick="window.location.href='read.html?title=The Midnight Heart'" style="cursor: pointer;">
+                    <div class="chapter-info">
+                        <span class="chapter-count">18 ตอน</span>
+                        <a href="add_chapter.html?title=The Midnight Heart" class="add-chapter-btn"><i class="fas fa-plus"></i> เพิ่มตอน</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="assets/book3.png" alt="The Starlight Princess" onclick="window.location.href='read.html?title=The Starlight Princess'" style="cursor: pointer;">
+                    <div class="chapter-info">
+                        <span class="chapter-count">12 ตอน</span>
+                        <a href="add_chapter.html?title=The Starlight Princess" class="add-chapter-btn"><i class="fas fa-plus"></i> เพิ่มตอน</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages Section -->
+        <section class="section author-messages-section">
+            <div class="section-header">
+                <i class="fas fa-comment-dots section-icon" style="font-size: 24px; color: #5c6bc0; margin-right: 10px;"></i>
+                <h2>ข้อความจากผู้อ่าน</h2>
+            </div>
+            
+            <div class="message-section" style="max-width: 800px; margin: 0 auto;">
+                <div class="message-card">
+                    <img src="assets/ผู้อ่าน.jpg" alt="นักอ่านรังฝัน" class="commenter-avatar">
+                    <div class="message-content">
+                        <p class="commenter-name">ชื่อ : นักอ่านรังฝัน</p>
+                        <p class="message-text">
+                            <span class="heart-icon">❤️</span> <strong>ข้อความถึงผู้แต่ง</strong><br>
+                            ขอบคุณที่เดินทางไปกับเรื่องราวของเรา<br>
+                            ทุกยอดอ่าน ทุกคอมเมนต์ และทุกคำที่ส่งใจจากนักอ่าน<br>
+                            คือพลังสำคัญที่ช่วยให้นักเขียนสร้างผลงานดี ๆ ต่อไป<br>
+                            หากคุณชื่นชอบนิยายเรื่องนี้ อย่าลืมกดติดตาม แสดงความคิดเห็น<br>
+                            หรือส่งกำลังใจถึงผู้แต่งได้เลยนะคะ<br>
+                            เพราะทุกข้อความของคุณ มีความหมายเสมอ ❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="books.html">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อ</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@novelnest.com</p>
+                <p><i class="fab fa-line"></i> Line Official: @novelnest</p>
+                <p><i class="fab fa-facebook"></i> Facebook: Novelnest Official</p>
+                <p><i class="fab fa-instagram"></i> Instagram: @novelnest.th</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Reply Logic
+        function showReplyForm(btn, msgId) {
+            if (btn.nextElementSibling && btn.nextElementSibling.className === 'reply-form') return;
+            const form = document.createElement('div');
+            form.className = 'reply-form';
+            form.style.marginTop = '15px';
+            form.innerHTML = `
+                <textarea class="reply-input" rows="2" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-family: 'Sarabun', sans-serif;" placeholder="พิมพ์ข้อความตอบกลับ..."></textarea>
+                <div style="margin-top: 8px; text-align: right;">
+                    <button onclick="this.parentNode.parentNode.remove()" style="margin-right: 10px; padding: 5px 15px; background: #eee; color: #333; border: none; border-radius: 5px; cursor: pointer; font-family: 'Sarabun', sans-serif;">ยกเลิก</button>
+                    <button onclick="submitReply(this, '${msgId}')" style="padding: 5px 15px; background: #5c6bc0; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Sarabun', sans-serif;">ส่งข้อความ</button>
+                </div>
+            `;
+            btn.parentNode.insertBefore(form, btn.nextSibling);
+        }
+
+        function submitReply(btn, msgId) {
+            const textarea = btn.parentNode.previousElementSibling;
+            const text = textarea.value.trim();
+            if (!text) return;
+            
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
+            
+            renderReply(btn.closest('.message-content'), text, timeString);
+            
+            // Save to localStorage
+            if (msgId && msgId !== 'static') {
+                let messages = JSON.parse(localStorage.getItem('readerMessages') || '[]');
+                const msgIndex = messages.findIndex(m => m.id == msgId);
+                if (msgIndex !== -1) {
+                    if (!messages[msgIndex].replies) messages[msgIndex].replies = [];
+                    messages[msgIndex].replies.push({ text: text, time: timeString });
+                    localStorage.setItem('readerMessages', JSON.stringify(messages));
+                }
+            }
+            
+            btn.closest('.reply-form').remove();
+        }
+
+        function renderReply(container, text, time) {
+            const replyCard = document.createElement('div');
+            replyCard.style.marginTop = '15px';
+            replyCard.style.padding = '15px';
+            replyCard.style.background = '#f0f2f5';
+            replyCard.style.borderRadius = '8px';
+            replyCard.style.borderLeft = '4px solid #5c6bc0';
+            replyCard.style.display = 'flex';
+            replyCard.style.gap = '15px';
+            
+            replyCard.innerHTML = `
+                <img src="assets/author_avatar.png" alt="นักเขียน" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <div style="flex: 1;">
+                    <p style="font-weight: 600; color: #333; margin-bottom: 5px; font-size: 0.95rem;">Secret Moon (นักเขียน)</p>
+                    <p style="color: #444; font-size: 0.95rem; margin-bottom: 5px;">${text.replace(/\n/g, '<br>')}</p>
+                    <p style="font-size: 0.75rem; color: #888;">ตอบเมื่อ: ${time}</p>
+                </div>
+            `;
+            container.appendChild(replyCard);
+        }
+
+        // Load Messages from localStorage
+        window.addEventListener('DOMContentLoaded', () => {
+            const messages = JSON.parse(localStorage.getItem('readerMessages') || '[]');
+            const messageSection = document.querySelector('.author-messages-section .message-section');
+            
+            // Add reply button to static message
+            const staticMsgContent = document.querySelector('.message-card .message-content');
+            if (staticMsgContent && !staticMsgContent.querySelector('.reply-btn')) {
+                const replyBtn = document.createElement('button');
+                replyBtn.className = 'reply-btn';
+                replyBtn.innerHTML = '<i class="fas fa-reply"></i> ตอบกลับ';
+                replyBtn.style.cssText = 'margin-top: 10px; background: none; border: none; color: #5c6bc0; cursor: pointer; font-family: "Sarabun", sans-serif; font-weight: 500;';
+                replyBtn.onclick = function() { showReplyForm(this, 'static'); };
+                staticMsgContent.appendChild(replyBtn);
+            }
+            
+            if (messages.length > 0 && messageSection) {
+                messages.forEach(msg => {
+                    const newCard = document.createElement('div');
+                    newCard.className = 'message-card';
+                    newCard.style.marginTop = '20px';
+                    
+                    newCard.innerHTML = `
+                        <img src="assets/ผู้อ่าน.jpg" alt="ผู้อ่าน" class="commenter-avatar">
+                        <div class="message-content" style="width: 100%;">
+                            <p class="commenter-name">ชื่อ : นักอ่านรังฝัน</p>
+                            <p class="message-text">
+                                ${msg.text.replace(/\n/g, '<br>')}
+                            </p>
+                            <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">ส่งเมื่อ: ${msg.time}</p>
+                            <button class="reply-btn" onclick="showReplyForm(this, '${msg.id}')" style="margin-top: 10px; background: none; border: none; color: #5c6bc0; cursor: pointer; font-family: 'Sarabun', sans-serif; font-weight: 500;"><i class="fas fa-reply"></i> ตอบกลับ</button>
+                        </div>
+                    `;
+                    
+                    messageSection.appendChild(newCard);
+                    
+                    // Render existing replies
+                    if (msg.replies && msg.replies.length > 0) {
+                        const contentDiv = newCard.querySelector('.message-content');
+                        msg.replies.forEach(reply => {
+                            renderReply(contentDiv, reply.text, reply.time);
+                        });
+                    }
+                });
+            }
+
+            // Load Published Novels
+            const publishedNovels = JSON.parse(localStorage.getItem('publishedNovels') || '[]');
+            const worksGrid = document.querySelector('.works-grid');
+            if (publishedNovels.length > 0 && worksGrid) {
+                // Determine if we should clear dummy or just append (append is better)
+                // Actually, let's prepend them so new novels appear first
+                publishedNovels.reverse().forEach(novel => {
+                    const novelCard = document.createElement('div');
+                    novelCard.className = 'category-card';
+                    
+                    // The image and title are clickable to read
+                    let innerHTML = `<img src="${novel.cover}" alt="${novel.title}" style="width: 100%; height: auto; object-fit: cover; cursor: pointer;" onclick="window.location.href='read.html?id=${novel.id}'">
+                                     <div class="category-card-title" style="cursor: pointer;" onclick="window.location.href='read.html?id=${novel.id}'">${novel.title}</div>`;
+                    
+                    // The chapter info area
+                    // Use novel.chapters.length if available, otherwise 1
+                    const chapCount = novel.chapters ? novel.chapters.length : 1;
+                    
+                    const isWriter = (localStorage.getItem('username') || '').includes('นักเขียน');
+                    const addChapterBtnHtml = isWriter ? `<a href="add_chapter.html?id=${novel.id}" class="add-chapter-btn"><i class="fas fa-plus"></i> เพิ่มตอน</a>` : '';
+                    
+                    innerHTML += `<div class="chapter-info">
+                                    <span class="chapter-count">${chapCount} ตอน</span>
+                                    ${addChapterBtnHtml}
+                                  </div>`;
+                    
+                    novelCard.innerHTML = innerHTML;
+                    // Insert at the beginning of the grid
+                    worksGrid.insertBefore(novelCard, worksGrid.firstChild);
+                });
+                
+                // Update novel count in stats
+                const statLeft = document.querySelector('.stat-group-left');
+                if (statLeft) {
+                    const novelCountItem = statLeft.querySelector('.stat-item');
+                    if (novelCountItem && novelCountItem.innerText.includes('งานเขียน')) {
+                        // original was 'งานเขียน 4 เรื่อง'
+                        // Let's assume we add the number of newly published novels
+                        const baseCount = 4;
+                        novelCountItem.innerText = `งานเขียน ${baseCount + publishedNovels.length} เรื่อง`;
+                    }
+                }
+            }
+            
+            // Hide author-specific actions for non-writers
+            const username = localStorage.getItem('username') || '';
+            const isWriter = username.includes('นักเขียน');
+            
+            if (!isWriter) {
+                const writeContainer = document.getElementById('writeNovelContainer');
+                if (writeContainer) writeContainer.style.display = 'none';
+                
+                const staticAddBtns = document.querySelectorAll('.add-chapter-btn');
+                staticAddBtns.forEach(btn => btn.style.display = 'none');
+            }
+        });
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+</html>
+

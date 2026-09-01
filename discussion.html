@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelnest - มุมพูดคุย</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Novelnest Logo" class="logo">
+                <span class="brand-name">Novelnest</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="books.html">ชั้นหนังสือ</a></li>
+                <li><a href="authors.html">แนะนำนักเขียน</a></li>
+                <li><a href="discussion.html" class="active">มุมพูดคุย</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li id="authMenu" style="margin-left: 15px;">
+                    <a href="login.html" class="btn-login" style="background: var(--secondary-color); color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="discussion-section">
+            <div class="section-header discussion-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/2010/2010141.png" alt="Megaphone" class="section-icon megaphone-icon">
+                <h2>ข่าวสารและประกาศจากนักเขียน</h2>
+            </div>
+            
+            <!-- Author Announcement Form -->
+            <div class="announcement-form-area" style="background: #DFDFDF; padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+                <h3 style="margin-bottom: 15px; font-weight: 500; font-size: 18px;"><i class="fas fa-pen"></i> สร้างประกาศใหม่</h3>
+                <input type="text" id="announcement-title" placeholder="หัวข้อประกาศ..." style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #ccc; font-family: 'Sarabun', sans-serif;">
+                <textarea id="announcement-detail" rows="3" placeholder="รายละเอียดเพิ่มเติม (ถ้ามี)..." style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #ccc; font-family: 'Sarabun', sans-serif; resize: vertical;"></textarea>
+                <div style="text-align: right;">
+                    <button onclick="postAnnouncement()" style="background: #5c6bc0; color: white; padding: 10px 25px; border: none; border-radius: 25px; cursor: pointer; font-family: 'Sarabun', sans-serif; font-size: 16px;"><i class="fas fa-paper-plane"></i> ประกาศ</button>
+                </div>
+            </div>
+
+            <div class="announcement-list">
+                <!-- Announcement Card 1 -->
+                <div class="announcement-card static-announcement">
+                    <div class="announcement-top">
+                        <i class="fas fa-thumbtack announcement-icon"></i>
+                        <span class="announcement-title">[ ประกาศ ] เลื่อนงดอัปเดทนิยายชั่วคราวในสัปดาห์นี้</span>
+                    </div>
+                    <div class="announcement-bottom">
+                        <div class="announcement-details-link">
+                            <i class="far fa-file-alt"></i>
+                            <span>รายละเอียด</span>
+                        </div>
+                        <div class="announcement-date">
+                            <span>วันที่ 06 / 04 / 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Announcement Card 2 -->
+                <div class="announcement-card static-announcement">
+                    <div class="announcement-top">
+                        <i class="fas fa-shopping-cart announcement-icon"></i>
+                        <span class="announcement-title">[ เปิดจอง ] พรีออเดอร์รวมเล่มนิยายเรื่องพันธะลับสัญญาใจแล้ววันนี้</span>
+                    </div>
+                    <div class="announcement-bottom">
+                        <div class="announcement-details-link">
+                            <i class="far fa-file-alt"></i>
+                        </div>
+                        <div class="announcement-date">
+                            <span>วันที่ 01 / 06 / 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Novelnest Logo">
+                <h2>Novelnest</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="books.html">ชั้นหนังสือ</a>
+                <a href="authors.html">แนะนำนักเขียน</a>
+                <a href="discussion.html">มุมพูดคุย</a>
+                <a href="contact.html">ติดต่อ</a>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อ</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@novelnest.com</p>
+                <p><i class="fab fa-line"></i> Line Official: @novelnest</p>
+                <p><i class="fab fa-facebook"></i> Facebook: Novelnest Official</p>
+                <p><i class="fab fa-instagram"></i> Instagram: @novelnest.th</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Post Announcement Logic
+        let currentEditId = null;
+
+        function postAnnouncement() {
+            const titleInput = document.getElementById('announcement-title');
+            const detailInput = document.getElementById('announcement-detail');
+            const title = titleInput.value.trim();
+            const detail = detailInput.value.trim();
+            
+            if (title !== '') {
+                let announcements = JSON.parse(localStorage.getItem('authorAnnouncements') || '[]');
+                
+                if (currentEditId) {
+                    const index = announcements.findIndex(a => a.id === currentEditId);
+                    if (index !== -1) {
+                        announcements[index].title = title;
+                        announcements[index].detail = detail;
+                    }
+                    currentEditId = null;
+                    document.querySelector('.announcement-form-area button').innerHTML = '<i class="fas fa-paper-plane"></i> ประกาศ';
+                } else {
+                    const now = new Date();
+                    const dateString = String(now.getDate()).padStart(2, '0') + ' / ' + 
+                                       String(now.getMonth() + 1).padStart(2, '0') + ' / ' + 
+                                       now.getFullYear();
+                    const newId = Date.now();
+                    announcements.unshift({ id: newId, title: title, detail: detail, date: dateString });
+                }
+                
+                localStorage.setItem('authorAnnouncements', JSON.stringify(announcements));
+                
+                titleInput.value = '';
+                detailInput.value = '';
+                
+                renderAnnouncements();
+            } else {
+                alert('กรุณากรอกหัวข้อประกาศค่ะ');
+            }
+        }
+
+        function editAnnouncement(id) {
+            let announcements = JSON.parse(localStorage.getItem('authorAnnouncements') || '[]');
+            const ann = announcements.find(a => a.id === id);
+            if (ann) {
+                document.getElementById('announcement-title').value = ann.title;
+                document.getElementById('announcement-detail').value = ann.detail || '';
+                currentEditId = id;
+                document.querySelector('.announcement-form-area button').innerHTML = '<i class="fas fa-save"></i> อัปเดต';
+                document.getElementById('announcement-title').focus();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function deleteAnnouncement(id) {
+            if (confirm('คุณต้องการลบประกาศนี้ใช่หรือไม่?')) {
+                let announcements = JSON.parse(localStorage.getItem('authorAnnouncements') || '[]');
+                announcements = announcements.filter(a => a.id !== id);
+                localStorage.setItem('authorAnnouncements', JSON.stringify(announcements));
+                renderAnnouncements();
+            }
+        }
+
+        function renderAnnouncements() {
+            const announcementList = document.querySelector('.announcement-list');
+            let announcements = JSON.parse(localStorage.getItem('authorAnnouncements') || '[]');
+            
+            // Fix old announcements missing ID
+            let needsSave = false;
+            announcements.forEach(a => {
+                if (!a.id) {
+                    a.id = Date.now() + Math.random();
+                    needsSave = true;
+                }
+            });
+            if (needsSave) localStorage.setItem('authorAnnouncements', JSON.stringify(announcements));
+            
+            // Clear existing dynamic ones first
+            const dynamicCards = announcementList.querySelectorAll('.dynamic-announcement');
+            dynamicCards.forEach(card => card.remove());
+            
+            // Append from end of array so newest (unshifted) appears at top
+            announcements.slice().reverse().forEach(ann => {
+                const newCard = document.createElement('div');
+                newCard.className = 'announcement-card dynamic-announcement';
+                
+                let detailsHtml = '';
+                if (ann.detail) {
+                    detailsHtml = `<span>${ann.detail.replace(/\\n/g, '<br>')}</span>`;
+                }
+                
+                newCard.innerHTML = `
+                    <div class="announcement-top" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+                        <div style="flex: 1;">
+                            <i class="fas fa-bullhorn announcement-icon" style="color: #5c6bc0;"></i>
+                            <span class="announcement-title">${ann.title}</span>
+                        </div>
+                        <div class="announcement-actions" style="display: flex; gap: 15px; margin-left: 15px;">
+                            <button onclick="editAnnouncement(${ann.id})" style="background: none; border: none; color: #5c6bc0; cursor: pointer; font-size: 16px;" title="แก้ไข"><i class="fas fa-edit"></i></button>
+                            <button onclick="deleteAnnouncement(${ann.id})" style="background: none; border: none; color: #ff6b6b; cursor: pointer; font-size: 16px;" title="ลบ"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="announcement-bottom">
+                        <div class="announcement-details-link">
+                            <i class="far fa-file-alt"></i>
+                            ${detailsHtml}
+                        </div>
+                        <div class="announcement-date">
+                            <span>วันที่ ${ann.date}</span>
+                        </div>
+                    </div>
+                `;
+                
+                announcementList.insertBefore(newCard, announcementList.firstChild);
+            });
+        }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAnnouncements();
+        });
+    </script>
+    <script>
+        // Auth Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const authMenu = document.getElementById('authMenu');
+            if(authMenu && localStorage.getItem('isLoggedIn') === 'true') {
+                const user = localStorage.getItem('username') || 'User';
+                const avatar = localStorage.getItem('userAvatar') || 'assets/author_avatar.png';
+                authMenu.innerHTML = `<a href="authors.html" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center; gap: 8px; text-decoration: none;"><img src="${avatar}" style="width:35px; height:35px; border-radius:50%; object-fit:cover; border: 2px solid var(--primary-color);"> ${user}</a> 
+                <a href="#" onclick="event.preventDefault(); localStorage.clear(); location.reload();" style="font-size:13px; color:#ef4444; margin-left:10px; text-decoration: none; font-weight: 500;">ออกจากระบบ</a>`;
+            }
+        });
+    </script>
+</body>
+</html>
+
